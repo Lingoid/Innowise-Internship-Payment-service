@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:mongodb="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="
+           http://www.liquibase.org/xml/ns/dbchangelog
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd
+           http://www.liquibase.org/xml/ns/dbchangelog-ext
+           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <changeSet id="1" author="Lingoid">
+        <mongodb:createCollection collectionName="payments"/>
+    </changeSet>
+
+    <changeSet id="2" author="Lingoid">
+        <mongodb:createIndex collectionName="payments">
+            <mongodb:keys>{ "order_id": 1 }</mongodb:keys>
+            <mongodb:options>{ "unique": true, "name": "ux_order_id" }</mongodb:options>
+        </mongodb:createIndex>
+
+        <mongodb:createIndex collectionName="payments">
+            <mongodb:keys>{ "user_id": 1 }</mongodb:keys>
+            <mongodb:options>{ "name": "user_id_idx" }</mongodb:options>
+        </mongodb:createIndex>
+
+        <mongodb:createIndex collectionName="payments">
+            <mongodb:keys>{ "status": 1 }</mongodb:keys>
+            <mongodb:options>{ "name": "status_idx" }</mongodb:options>
+        </mongodb:createIndex>
+    </changeSet>
+</databaseChangeLog>
