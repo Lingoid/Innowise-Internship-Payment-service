@@ -1,9 +1,14 @@
 spring:
+  data:
+    mongodb:
+      uri: ${MONGO_URL}
   liquibase:
     enabled: true
-    url: ${MONGO_URL}
     change-log: db/changelog/main-changelog.xml
+    url: ${spring.data.mongodb.uri}
 
-logging:
-  level:
-    liquibase: DEBUG
+random-org:
+  url: ${RANDOMORG_URL}
+
+server:
+  port: ${SERVER_PORT}

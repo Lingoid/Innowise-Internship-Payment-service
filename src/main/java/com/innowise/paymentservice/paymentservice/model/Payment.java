@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -16,8 +17,12 @@ public class Payment {
     @Id
     private String id;
 
+    @Field("order_id")
     private String orderId;
+
+    @Field("user_id")
     private String userId;
+
     private String status;
     private LocalDateTime timestamp;
     private BigDecimal paymentAmount;
