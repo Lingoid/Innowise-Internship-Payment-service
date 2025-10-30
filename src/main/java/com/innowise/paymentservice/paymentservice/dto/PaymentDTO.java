@@ -18,6 +18,8 @@ public class PaymentDTO {
     private String orderId;
     private String userId;
 
+    private String status;
+
     private LocalDateTime timestamp;
 
     @NotNull(message = "Payment amount cannot be null")

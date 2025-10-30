@@ -7,6 +7,14 @@ spring:
     change-log: db/changelog/main-changelog.xml
     url: ${spring.data.mongodb.uri}
 
+  kafka:
+    bootstrap-servers: ${BROKER_ADDRESS}
+    consumer:
+      group-id: ${GROUP}
+    topics:
+      create-order: ${CREATE_ORDER}
+      create-payment: ${CREATE_PAYMENT}
+
 random-org:
   url: ${RANDOMORG_URL}
 

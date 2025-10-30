@@ -1,5 +1,6 @@
 package com.innowise.paymentservice.paymentservice.service;
 
+import com.innowise.paymentservice.paymentservice.util.RandomOrgUnavailableException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -22,8 +23,7 @@ public class RandomOrgService {
             String response = restTemplate.getForObject(apiUrl, String.class);
             return Integer.parseInt(response.trim());
         } catch (RestClientException | NumberFormatException e) {
-            e.printStackTrace();
-            return -1;
+            throw new RandomOrgUnavailableException();
         }
     }
 }

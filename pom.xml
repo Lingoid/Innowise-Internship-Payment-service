@@ -17,6 +17,7 @@
         <java.version>21</java.version>
         <mongodb-liquibase-version>5.0.1</mongodb-liquibase-version>
         <mapstruct-version>1.6.3</mapstruct-version>
+        <jackson-jsr-version>3.0.0-rc2</jackson-jsr-version>
     </properties>
     <dependencies>
         <dependency>
@@ -59,6 +60,20 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tools.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson-jsr-version}</version>
         </dependency>
     </dependencies>
 
