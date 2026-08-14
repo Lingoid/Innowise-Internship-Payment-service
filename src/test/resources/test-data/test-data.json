@@ -1,0 +1,7 @@
+{
+  "orderId": "order-1",
+  "userId": "user-1",
+  "paymentAmount": 100,
+  "status": "SUCCESS",
+  "timestamp": "2025-10-30T22:00:00"
+}
